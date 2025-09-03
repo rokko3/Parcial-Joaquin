@@ -15,7 +15,7 @@ int main() {
     long long result;
 
     start_time = clock();
-    result = factorial_c(35);
+    result = factorial_c(100);
     end_time = clock();
     cpu_time_used = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
 

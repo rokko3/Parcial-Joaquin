@@ -8,7 +8,7 @@ def factorial_python(n):
 
 
 start_time = time.time()
-result = factorial_python(35)
+result = factorial_python(90000)
 end_time = time.time()
 
 print(f"Tiempo de ejecucion: {end_time - start_time} seconds")
