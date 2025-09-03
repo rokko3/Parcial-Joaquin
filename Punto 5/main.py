@@ -1,24 +1,28 @@
 import sys
-from antlr4 import *
-from gramaticaLexer import gramaticaLexer
-from gramaticaParser import gramaticaParser
-from EvalVisitor import EvalVisitor
 
-def main(argv):
-    if len(argv) < 2:
-        print("No se agrego un archivo")
-        return
+def fibonacci(n):
+    """Genera la secuencia de Fibonacci hasta n términos."""
+    secuencia = [0, 1]
+    while len(secuencia) < n:
+        secuencia.append(secuencia[-1] + secuencia[-2])
+    return secuencia[:n]
 
-    input_stream = FileStream(argv[1])
-    lexer = gramaticaLexer(input_stream)
-    stream = CommonTokenStream(lexer)
-    parser = gramaticaParser(stream)
-    tree = parser.prog()
+def main():
+    if len(sys.argv) != 2:
+        print("Uso: python main.py <numero>")
+        sys.exit(1)
 
-    visitor = EvalVisitor()
-    result = visitor.visit(tree)
+    try:
+        n = int(sys.argv[1])
+        if n <= 0:
+            print("Ingrese un número mayor que 0")
+            sys.exit(1)
+    except ValueError:
+        print("El argumento debe ser un número entero")
+        sys.exit(1)
 
-    print("Resultado:", ", ".join(map(str, result)))
+    resultado = fibonacci(n)
+    print(f"Fibonacci de {n}: {resultado}")
 
-if __name__ == '__main__':
-    main(sys.argv)
+if __name__ == "__main__":
+    main()

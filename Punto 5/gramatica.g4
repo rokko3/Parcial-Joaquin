@@ -1,11 +1,11 @@
 grammar gramatica;
 
+prog: expr EOF ;
 
-prog: fiboExpr EOF ;
+expr
+    : 'fibo' '(' NUM ')'   #fibo
+    | NUM                  #number
+    ;
 
-fiboExpr: FIBO '(' INT ')' ;
-
-FIBO: 'FIBO' ;
-INT: [0-9]+ ;
-
+NUM: [0-9]+ ;
 WS: [ \t\r\n]+ -> skip ;
