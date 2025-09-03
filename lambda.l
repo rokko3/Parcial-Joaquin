@@ -2,13 +2,12 @@
 #include <stdio.h>
 #include <string.h>
 
-int valido = 1;   // bandera para indicar si la expresión es válida
+int valido = 1;  
 %}
 
-/* Definición de expresiones regulares */
-ID          [a-zA-Z_][a-zA-Z0-9_]*
-NUM         [0-9]+
-SPACE       [ \t]+
+NUM [0-9]+
+DOUBLE [0-9]+ '.' [0-9]+
+SPACE [ \t]+
 
 %%
 
@@ -22,7 +21,7 @@ print\({ID}\({NUM}\)\)
 
 int main(int argc, char *argv[]) {
     if (argc < 2) {
-        printf("Uso: %s <archivo>\n", argv[0]);
+        printf("No se ingreso un archivo para prueba");
         return 1;
     }
 
