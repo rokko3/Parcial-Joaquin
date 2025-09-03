@@ -19,8 +19,7 @@ int main() {
     end_time = clock();
     cpu_time_used = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
 
-    printf("C Factorial of 35: %lld\n", result);
-    printf("C Execution Time: %f seconds\n", cpu_time_used);
+    printf("Tiempo de ejecucion: %f seconds\n", cpu_time_used);
 
     return 0;
 }
