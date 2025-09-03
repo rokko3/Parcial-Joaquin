@@ -5,3 +5,14 @@ Esta gramatica genera el siguiente lenguaje:
 L = {(abc)^n|ε} donde n >= 0 
 
 Con esta gramatica, aceptan cadenas de abc o cadenas vacias
+
+## Prueba
+
+```bash
+aabbcc
+aabc
+bca
+```
+## Respuesta
+
+![alt text](image.png)
